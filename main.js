@@ -169,6 +169,9 @@ playBtn.addEventListener('click', () => {
 
 backBtn.addEventListener ('click', () => {
   bodyDiv.classList.remove(bodyDiv.classList[1])
+  container.classList.remove(container.classList[2])
+  container.classList.remove(container.classList[1])
+  container.classList.add('one')
 })
 
 window.onload = function() {
