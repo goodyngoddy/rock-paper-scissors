@@ -78,10 +78,14 @@ body {
   position: absolute;
   z-index: 1;
   top: 20%;
-  left: 34%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   background: white;
   width: fit-content;
-  height: fit-content;
+  height: 300px;
   border-radius: 5px;
   padding: 10px;
 }
@@ -105,7 +109,7 @@ body {
 .rules-image{
   content: url('assets/images/image-rules.svg');
   width: 250px;
-  padding: 10px;
+  padding: 20px;
   margin-top: 20px;
 }
 .body.bonus .rules-image {
@@ -278,11 +282,11 @@ body {
 }
 .back-btn {
   align-self: end;
-  justify-self: end;
+  justify-self: center;
 }
 .rules-open-btn{
   align-self: end;
-  justify-self: start;
+  justify-self: center;
 }
 
 .rules-open-btn, .back-btn{
@@ -313,7 +317,7 @@ body {
   height: 180px;
   border-width: 20px;
   padding: 25px;
-  background: radial-gradient(circle at 50% 115px, #fdfdfd 70%, #ebebed 20%, #e8e8ea 10%);
+  background: radial-gradient(circle at 50% 90px, #fdfdfd 70%, #ebebed 20%, #e8e8ea 10%);
 }
 .container.two .paper {
   box-shadow: 0 7px hsl(230, 89%, 62%);

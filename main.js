@@ -22,9 +22,15 @@ let score = 0
 
 rpsBtn.addEventListener('click', () => {
   bodyDiv.classList.add('main')
+  if (!container.classList.contains('rules')) {
+    container.classList.add('rules')
+  }
 })
 rpsBonusBtn.addEventListener('click', () => {
   bodyDiv.classList.add('bonus')
+  if (!container.classList.contains('rules')) {
+    container.classList.add('rules')
+  }
 })
 
 rulesCloseBtn.addEventListener('click', () => {
@@ -163,8 +169,6 @@ playBtn.addEventListener('click', () => {
 
 backBtn.addEventListener ('click', () => {
   bodyDiv.classList.remove(bodyDiv.classList[1])
-  container.classList.remove(container.classList[2])
-  container.classList.remove(container.classList[1])
 })
 
 window.onload = function() {
