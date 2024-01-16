@@ -16,8 +16,7 @@ let statusText = document.querySelector('.status-text')
 
 let choiceList = ['paper', 'scissors', 'rock']
 let choiceListBonus = ['scissors', 'spock', 'paper', 'lizard', 'rock']
-let randomNum, time, count, userWon, draw, num
-let userVisited = false
+let randomNum, time, count, userWon, draw, num, userIndex
 let score = 0
 
 rpsBtn.addEventListener('click', () => {
@@ -46,7 +45,8 @@ stepOneItemBonus.forEach((stepOneItemBonus, i) => {
     container.classList.add('two')
     userChoice.innerHTML = `<div class="${choiceListBonus[i]}"></div>`
     getHouseChoiceBonus()
-    getWinnerBonus(i)
+    userIndex = i
+    return userIndex
   })
 })
 stepOneItemMain.forEach((stepOneItemMain, i) => {
@@ -55,11 +55,12 @@ stepOneItemMain.forEach((stepOneItemMain, i) => {
     container.classList.add('two')
     userChoice.innerHTML = `<div class="${choiceList[i]}"></div>`
     getHouseChoice()
-    getWinner(i)
+    userIndex = i
+    return userIndex
   })
 })
 
-function setStatus(num) {
+function setStatus() {
   if (draw === true) {
     statusText.textContent = "It's a draw"
     score += 0.5
@@ -72,7 +73,10 @@ function setStatus(num) {
   }
   if (score < 0) {score = 0}
   localStorage.setItem("score", JSON.stringify(score))
-  num.textContent = score
+  scoreValue.textContent = score
+  
+  // setScore(scoreValue)
+  return
 }
 
 function getHouseChoice() {
@@ -87,7 +91,8 @@ function getHouseChoice() {
     }
     if (count === 0) {
       container.classList.add('four')
-      return randomNum
+      getWinner(userIndex)
+      setStatus()
     }
   }, 1000)
 }
@@ -103,7 +108,8 @@ function getHouseChoiceBonus() {
     }
     if (count === 0) {
       container.classList.add('four')
-      return randomNum
+      getWinnerBonus(userIndex)
+      setStatus()
     }
   }, 1000)
 }
@@ -118,7 +124,6 @@ function getWinner(a) {
   } else {
     userWon = false
   }
-  let timer = setTimeout(setStatus(scoreValue), 3000)
 }
 function getWinnerBonus(a) {
   if (a === randomNum) {
@@ -154,7 +159,6 @@ function getWinnerBonus(a) {
           userWon = false
     }
   }
-  let timer = setTimeout(setStatus(scoreValue), 3000)
 }
 
 playBtn.addEventListener('click', () => {
@@ -182,4 +186,5 @@ window.onload = function() {
     localStorage.setItem("score", JSON.stringify(score))
   }
 }
+
 
