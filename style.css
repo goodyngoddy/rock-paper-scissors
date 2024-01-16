@@ -181,9 +181,10 @@ body {
 }
 .score-value {
   color: hsl(229, 25%, 31%);
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   font-family: 'Barlow Semi Condensed Bold';
+  padding: 5px;
 }
 .main-container {
   width: 100%;
@@ -229,22 +230,22 @@ body {
   box-shadow: 0 5px hsl(230, 89%, 60%);
 }
 .scissors {
-  content: url('/assets/images/icon-scissors.svg');
+  content: url('assets/images/icon-scissors.svg');
   border: 15px solid hsl(40, 84%, 53%);
   box-shadow: 0 5px hsl(39, 89%, 40%);
 }
 .rock {
-  content: url('/assets/images/icon-rock.svg');
+  content: url('assets/images/icon-rock.svg');
   border: 15px solid hsl(349, 70%, 56%);
   box-shadow: 0 5px hsl(349, 71%, 50%);
 }
 .spock {
-  content: url('/assets/images/icon-spock.svg');
+  content: url('assets/images/icon-spock.svg');
   border: 15px solid hsl(189, 58%, 57%);
   box-shadow: 0 5px hsl(189, 59%, 53%);
 }
 .lizard {
-  content: url('/assets/images/icon-lizard.svg');
+  content: url('assets/images/icon-lizard.svg');
   border: 15px solid hsl(261, 72%, 63%);
   box-shadow: 0 5px hsl(261, 73%, 60%);
 }
