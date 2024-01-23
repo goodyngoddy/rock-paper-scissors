@@ -110,9 +110,13 @@ function getHouseChoiceBonus() {
     if (count === 2) {
       houseChoice.innerHTML = `<div class="${choiceListBonus[randomNum]}"></div>`
     }
+    if (count === 1) {
+      container.classList.add('three')
+    }
     if (count === 0) {
+      container.classList.remove('three')
       container.classList.add('four')
-      getWinnerBonus(userIndex)
+      getWinner(userIndex)
       setStatus()
     }
   }, 1000)
