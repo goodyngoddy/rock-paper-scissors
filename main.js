@@ -81,7 +81,7 @@ function setStatus() {
 
 function getHouseChoice() {
   num = 3
-  count = 3
+  count = 4
   houseChoice.innerHTML = `<div class="unknown"></div>`
   randomNum = Math.floor(Math.random() * num)
   time = setInterval(() => {
@@ -89,7 +89,11 @@ function getHouseChoice() {
     if (count === 2) {
       houseChoice.innerHTML = `<div class="${choiceList[randomNum]}"></div>`
     }
+    if (count === 1) {
+      container.classList.add('three')
+    }
     if (count === 0) {
+      container.classList.remove('three')
       container.classList.add('four')
       getWinner(userIndex)
       setStatus()

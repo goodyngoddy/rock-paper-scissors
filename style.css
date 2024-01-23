@@ -71,6 +71,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   box-shadow: 3px 1px 3px hsl(217, 16%, 45%);
+  cursor: pointer;
 }
 
 .rules-container {
@@ -122,6 +123,7 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
+  cursor: pointer;
 }
 
 .container  {
@@ -205,12 +207,14 @@ body {
   border-radius: 50%;
   padding: 20px;
   background: radial-gradient(circle at 50% 65px, #fdfdfd 70%, #ebebed 20%, #e8e8ea 10%);
+  cursor: pointer;
 }
 .body.bonus .paper, .body.bonus .scissors, .body.bonus .rock, .body.bonus .spock, .body.bonus .lizard {
   width: 100px;
   height: 100px;
   padding: 10px;
   background: radial-gradient(circle at 50% 45px, #fdfdfd 70%, #ebebed 20%, #e8e8ea 10%);
+  cursor: pointer;
 }
 .step-one {
   background: url('assets/images/bg-triangle.svg');
@@ -367,12 +371,24 @@ body {
   border-radius: 50%;
   background: hsl(229, 38%, 22%);
 }
+.status {
+  width: 0.05rem;
+  transition: opacity 2s linear, width 2s linear;
+}
+.container.two.three .status{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
 .container.two.four .status {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 60%;
+  opacity: 1;
 }
 .status-text {
   font-size: 30px;
@@ -394,6 +410,7 @@ body {
   width: 100%;
   font-weight: 700;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 375px) {
